@@ -2,21 +2,13 @@
   "name": "webpack-sample-project",
   "version": "1.0.0",
   "description": "webpack基础配置",
+  "author": "horanrao@163.com",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/horanly/webpack-demo.git"
-  },
-  "author": "horanrao@163.com",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/horanly/webpack-demo/issues"
-  },
-  "homepage": "https://github.com/horanly/webpack-demo#readme",
   "dependencies": {
     "webpack": "^4.16.3"
   },
