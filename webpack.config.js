@@ -1,10 +1,11 @@
 const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
 	devtool: "eval-source-map", //生产阶段不建议启动
 	entry: __dirname + "/app/main.js", //入口文件
 	output: {
-		path: __dirname + "/public", //打包文件存放位置
+		path: __dirname + "/build", //打包文件存放位置
 		filename: "build.js" // 打包后输出的文件名字
 	},
 
@@ -20,12 +21,12 @@ module.exports = {
 		{
 			test: /(\.jsx|\.js)$/,
 			use: {
-				loader: "babel-loader",
-				options: {
+				loader: "babel-loader"
+				/*options: {
 					presets: [
 						"env", "react"
 					]
-				}
+				}*/
 			},
 			exclude: /node_modules/
 		},
@@ -47,6 +48,10 @@ module.exports = {
 		]
 	},
 	plugins:[
-		new webpack.BannerPlugin('版权所有，翻版必究')
+		new webpack.BannerPlugin('版权所有，翻版必究'),
+		new HtmlWebpackPlugin({
+			template : __dirname + "/app/index.tmpl.html"
+		}),
+		new webpack.HotModuleReplacementPlugin()	//热加载插件
 	],
 };
