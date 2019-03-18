@@ -22,7 +22,8 @@
     "style-loader": "^0.23.1",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.2.3",
-    "webpack-deep-scope-plugin": "^1.6.0"
+    "webpack-deep-scope-plugin": "^1.6.0",
+    "webpack-merge": "^4.2.1"
   },
   "dependencies": {}
 }
