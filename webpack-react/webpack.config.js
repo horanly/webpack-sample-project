@@ -35,12 +35,13 @@ module.exports = (env, argv) => {
                     }, ],
                 },
                 {
-                    test: /\.(css|less)$/,
+                    test: /\.(css|less|scss)$/,
                     use: [
                         devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
                         'css-loader',
                         'postcss-loader',
                         'less-loader',
+                        'sass-loader',
                     ],
                 },
                 {
