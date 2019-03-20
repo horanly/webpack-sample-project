@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 module.exports = (env, argv) => {
     const devMode = argv.mode !== 'production';
@@ -18,7 +19,16 @@ module.exports = (env, argv) => {
         },
 
         module: {
-            rules: [{
+            rules: [
+                {
+                    test: /\.vue$/,
+                    loader: 'vue-loader',
+                    options: {
+                        loaders: {}
+                        // other vue-loader options go here
+                    }
+                },
+                {
                     test: /\.(js|jsx)$/,
                     exclude: /node_modules/,
                     use: {
@@ -64,10 +74,10 @@ module.exports = (env, argv) => {
                 template: './public/index.html',
                 filename: './index.html',
             }),
-            // new CleanWebpackPlugin(['dist']),
             new CleanWebpackPlugin(['dist'], {
                 watch: false
             }),
+            new VueLoaderPlugin()
         ],
     };
 };
