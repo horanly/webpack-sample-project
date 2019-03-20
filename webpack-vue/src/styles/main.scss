@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+    line-height: 2;
+    text-align: center;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item{
+    color: aqua;
+    font: 2em sans-serif;
+}
